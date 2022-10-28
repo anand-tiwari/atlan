@@ -84,8 +84,6 @@ const actions = {
 
     const apiResponse = await fetchCandidates({ query_id: data.query_id })
 
-    console.log(apiResponse)
-
     commit('setLoading', false)
     commit('setQuery', data.query_id)
 
@@ -97,7 +95,10 @@ const actions = {
     } else {
       const response = apiResponse.data.length > 0 && apiResponse.data[0]
       commit('setCandidateList', response.data)
-      commit('setCandidates', response.data.slice(0, state.pagination.pageSize))
+      commit(
+        'setCandidates',
+        response.data.slice(0, state.pagination.pageSize)
+      )
       commit('setPagination', {
         total: Math.ceil(response.data.length / state.pagination.pageSize)
       })
@@ -105,27 +106,40 @@ const actions = {
     }
   },
   sortByField: ({ commit, state }, sortParams) => {
-    const sortedResult = getUpdatedCandidates(state.candidateList,
+    const sortedResult = getUpdatedCandidates(
+      state.candidateList,
       sortParams,
-      state.candidateHeaderFilter)
+      state.candidateHeaderFilter
+    )
     commit('setCandidateList', sortedResult)
-    const currentIndex = (state.pagination.page - 1) * state.pagination.pageSize
-    commit('setCandidates', sortedResult.slice(currentIndex, currentIndex + state.pagination.pageSize))
+    const currentIndex =
+            (state.pagination.page - 1) * state.pagination.pageSize
+    commit(
+      'setCandidates',
+      sortedResult.slice(currentIndex, currentIndex + state.pagination.pageSize)
+    )
   },
   nextPageResult: ({ commit, state }, pageValue) => {
     commit('setPagination', {
       page: state.pagination.page + pageValue
     })
-    const currentIndex = (state.pagination.page - 1) * state.pagination.pageSize
-    commit('setCandidates', state.candidateList.slice(currentIndex, currentIndex + state.pagination.pageSize))
+    const currentIndex =
+            (state.pagination.page - 1) * state.pagination.pageSize
+    commit(
+      'setCandidates',
+      state.candidateList.slice(
+        currentIndex,
+        currentIndex + state.pagination.pageSize
+      )
+    )
   }
 }
 
 const getters = {
-  candidates: state => state.candidates,
-  candidateHeaderFilter: state => state.candidateHeaderFilter,
-  pagination: state => state.pagination,
-  isLoading: state => state.isLoading
+  candidates: (state) => state.candidates,
+  candidateHeaderFilter: (state) => state.candidateHeaderFilter,
+  pagination: (state) => state.pagination,
+  isLoading: (state) => state.isLoading
 }
 
 export default {

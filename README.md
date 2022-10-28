@@ -20,6 +20,8 @@ npm run start
 
 ### unit Test cases
 
+###### unit test cases are added only 2 files but i can add for other files as well
+
 ```bash
 npm run unit
 ```
@@ -61,7 +63,7 @@ npm run test:report
 
 ### github repo
 
-- https://github.com/anand-tiwari/candidate-ui
+- https://github.com/anand-tiwari/atlan
 
 ### Backend Server
 
@@ -77,6 +79,31 @@ npm run test:report
 - [Vue-test-Utils](https://vue-test-utils.vuejs.org/) - for vue component testing
 - [Jest](https://jestjs.io/) - testing framework
 - [node.js](https://nodejs.org/en/) - evened I/O for the backend
+
+## How to Run.
+
+Open [Homescreen](https://atlan-ui.netlify.app/)
+![Screenshot](screenshot/homescreen.png)
+
+Select query from textarea and click on submit query button to get result
+we can get more query from [Backend](https://faker-server.herokuapp.com/sql)
+![Screenshot](screenshot/select_and_click_submit_query.png)
+
+Result page
+![Screenshot](screenshot/result_page.png)
+
+No Result page
+![Screenshot](screenshot/no_result_page.png)
+
+We can Apply sorting on field containing sorting icon.
+![Screenshot](screenshot/sort_filter_on_field.png)
+
+we can Apply sorting on any pages and result get sorted and we will be on same page instead of starting from page 1
+
+![Screenshot](screenshot/sort_on_next_page.png)
+
+Table in scrollable horizontal
+![Alt Text](screenshot/scroll_table_area.gif)
 
 ## Documentation
 

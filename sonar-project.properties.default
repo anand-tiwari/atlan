@@ -1,6 +1,6 @@
 # Ref:- https://docs.sonarqube.org/latest/analysis/scan/sonarscanner/
-sonar.projectKey=candidate-ui
-sonar.projectName=candidate-ui
+sonar.projectKey=atlan-ui
+sonar.projectName=atlan-ui
 sonar.projectVersion={{APP_VERSION}}
 
 sonar.sources=src

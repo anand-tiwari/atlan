@@ -17,7 +17,6 @@ export default {
     const submit = () => {
       const selection = window.getSelection()
       const selectedText = selection.toString().trim()
-      console.log('submit is called !!', selectedText)
       router.push({
         name: 'HomePage',
         query: {}
