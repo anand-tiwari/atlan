@@ -70,6 +70,10 @@ npm run test:report
 - As a backend server i am using `json-server` deployed in heroku
 - [Backend](https://faker-server.herokuapp.com/sql)
 
+### Performance review, i prefer lighthouse
+
+- [lighthouse-devtools](https://web.dev/performance-scoring/?utm_source=lighthouse&utm_medium=devtools)
+
 ## Tech
 
 - [Vue.js](https://v3.vuejs.org/) - HTML enhanced for web apps!
@@ -104,6 +108,10 @@ we can Apply sorting on any pages and result get sorted and we will be on same p
 
 Table in scrollable horizontal
 ![Alt Text](screenshot/scroll_table_area.gif)
+
+Query TextArea :
+textarea resize button is disabled.
+we have configuration of min(4) & max(15) rows for textarea if we crossed more than 15 rows we will get scrollbar in textarea.
 
 ## Documentation
 
